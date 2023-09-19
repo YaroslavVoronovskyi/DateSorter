@@ -32,7 +32,7 @@ public class DateSorter {
      * @return the collection of dates now sorted as per the spec
      */
 
-    private final String UPPER_CASE_MATCHER = "R";
+    private final static String UPPER_CASE_MATCHER = "R";
 
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
         return unsortedDates.stream()
