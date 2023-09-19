@@ -32,13 +32,11 @@ public class DateSorter {
      * @return the collection of dates now sorted as per the spec
      */
 
-    private final String LOWER_CASE_MATCHER = "r";
     private final String UPPER_CASE_MATCHER = "R";
 
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
         return unsortedDates.stream()
-                .sorted(Comparator.comparing((LocalDate date) -> !date.getMonth().toString().contains(LOWER_CASE_MATCHER)
-                                && !date.getMonth().toString().contains(UPPER_CASE_MATCHER))
+                .sorted(Comparator.comparing((LocalDate date) -> !date.getMonth().toString().contains(UPPER_CASE_MATCHER))
                         .thenComparing(Comparator.naturalOrder()))
                 .collect(Collectors.toList());
     }
